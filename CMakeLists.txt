@@ -8,5 +8,4 @@ set(CMAKE_CXX_STANDARD 11)
 
 set(SOURCE_FILES main.cpp)
 
-include_directories("$ )
 add_executable(eddiesProject ${SOURCE_FILES})
