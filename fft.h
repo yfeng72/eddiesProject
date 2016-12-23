@@ -8,7 +8,11 @@
 
 class fft {
     public:
-        void ditfft2(int x, int N, int s);
+        vector<complex> thelist;
+        vector<complex> ditfft2(vector<complex> x, int N);
+        void recursivefft(vector<complex> &x, int N, vector<complex> prevlist);
+        void createthelist(int size);
+
 };
 
 
