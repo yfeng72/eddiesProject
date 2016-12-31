@@ -5,6 +5,6 @@ set(eddiesProject_VERSION_MAJOR 1)
 set(eddiesProject_VERSION_MINOR 0)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++11")
 
-set(SOURCE_FILES main.cpp complex.cpp complex.h ditfft.cpp fft.cpp fft.h)
+set(SOURCE_FILES main.cpp complex.cpp complex.h fft.cpp fft.h)
 
 add_executable(eddiesProject ${SOURCE_FILES})
