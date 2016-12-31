@@ -30,7 +30,7 @@ void fft::recursivefft(vector<complex> &x, int N, vector<complex> prevlist, int 
     recursivefft(secondhalf, N, prevlist,halflength);
     for(int i=0; i<halflength; i++){
         complex temp=firsthalf[i];
-        complex product=secondhalf[i]*prevlist[(N/curr)*i];
+        complex product=secondhalf[i]*prevlist[(curr/N)*i];
         complex sum=temp+product;
         complex diff=temp-product;
         prevlist[i]=sum;
