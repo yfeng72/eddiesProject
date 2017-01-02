@@ -14,7 +14,7 @@ int main() {
     list.push_back( complex( 6.0, 0.0 ) );
     list.push_back( complex( 7.0, 0.0 ) );
     list.push_back( complex( 8.0, 0.0 ) );
-    fft transform( 8 );
+    fft transform( 8, false, NULL );
     vector<complex> transformedList = transform.ditfft2( list, 8 );
     std::cout << "Scaled Transformed List:" << std::endl;
     for ( complex item : transformedList ) {

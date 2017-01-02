@@ -3,13 +3,17 @@
 //
 
 #include <vector>
-#include <math.h>
+#include <cmath>
 #include "fft.h"
 
-fft::fft( int N ) {
-    for ( int i = 0; i < N; i++ ) {
-        complex temp = complex( 0.0, -2.0 * M_PI * i / N ).exp();
-        thelist.push_back( temp );
+fft::fft( int N, bool isThreaded, vector<complex> list ) {
+    if ( !isThreaded ) {
+        for ( int i = 0; i < N; i++ ) {
+            complex temp = complex( 0.0, -2.0 * M_PI * i / N ).exp();
+            thelist.push_back( temp );
+        }
+    } else {
+        thelist = list;
     }
 }
 

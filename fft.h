@@ -9,7 +9,7 @@
 
 class fft {
 public:
-    fft( int N );
+    fft( int N, bool isThreaded, vector<complex> list );
 
     vector<complex> thelist;
 
