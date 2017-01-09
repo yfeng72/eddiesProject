@@ -10,19 +10,20 @@ readcsv::readcsv(string csvname) {
     int i=0;
     if(myfile.is_open()){
         complex *newcomplex=new complex;
-        while(getline(myfile, line,',')){
-            //cout << line << endl;
-            if(i%2==0){
-                newcomplex->re=line;
-            }
-            else{
-                newcomplex->im=line;
-            }
-            i++;
-            if(i==2){
-                allcomplex.push_back(*newcomplex);
-                i=0;
-                complex *newcomplex=new complex;
+        while(getline(myfile, line){
+            while (getline(myfile,line,',')) {
+                //cout << line << endl;
+                if (i % 2 == 0) {
+                    newcomplex->re = (int) line;
+                } else {
+                    newcomplex->im = (int) line;
+                }
+                i++;
+                if (i == 2) {
+                    allcomplex.push_back(*newcomplex);
+                    i = 0;
+                    complex *newcomplex = new complex;
+                }
             }
         }
         myfile.close();
