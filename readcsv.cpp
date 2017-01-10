@@ -21,19 +21,6 @@ readcsv::readcsv( string csvname ) {
                 } else {
                     int value=atoi(line.c_str());
                     newcomplex->im = value;
-=======
-    ifstream myfile( csvname );
-    int i = 0;
-    if ( myfile.is_open()) {
-        complex *newcomplex = new complex;
-        while ( getline( myfile, line )) {
-            while ( getline( myfile, line, ',' )) {
-                //cout << line << endl;
-                if ( i % 2 == 0 ) {
-                    newcomplex->re = std::stod( line );
-                } else {
-                    newcomplex->im = std::stod( line );
->>>>>>> origin/master
                 }
                 i++;
                 if ( i == 2 ) {
