@@ -4,6 +4,8 @@
 #include "complex.h"
 #include <fstream>
 #include <vector>
+#include <stdlib.h>
+#include <sstream>
 #ifndef EDDIESPROJECT_READCSV_H
 #define EDDIESPROJECT_READCSV_H
 

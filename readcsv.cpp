@@ -7,16 +7,19 @@
 readcsv::readcsv(string csvname) {
     string line;
     ifstream myfile(csvname);
+    stringstream iss; //the stringstream to parse the line for commas
+    string value; //individual values
     int i=0;
     if(myfile.is_open()){
-        complex *newcomplex=new complex;
         while(getline(myfile, line)){
-            while(getline(myfile,line,',')){
+            /*while(getline(myfile,line,',')){
                 //cout << line << endl;
                 if (i % 2 == 0) {
-                    newcomplex->re = (int) line;
+                    int value=atoi(line.c_str());
+                    newcomplex->re = value;
                 } else {
-                    newcomplex->im = (int) line;
+                    int value=atoi(line.c_str());
+                    newcomplex->im = value;
                 }
                 i++;
                 if (i == 2) {
@@ -24,7 +27,27 @@ readcsv::readcsv(string csvname) {
                     i = 0;
                     complex *newcomplex = new complex;
                 }
+                */
+            complex *newcomplex=new complex;
+            iss << line;
+            while(getline(iss, value, ',')){//parse for commas
+                if(i==0){
+                    int number = atoi(value.c_str());
+                    //cout << number << endl;
+                    newcomplex->re = number;
+                }
+                else{
+                    int number = atoi(value.c_str());
+                    //cout << number << endl;
+                    newcomplex->im = number;
+                }
+                i++;
+                if(i==2){
+                    i=0;
+                }
             }
+            iss.clear();
+            allcomplex.push_back(*newcomplex);
         }
         myfile.close();
     }
