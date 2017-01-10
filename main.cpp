@@ -4,8 +4,14 @@
 #include "fft.h"
 #include "threadedFFT.h"
 #include <cmath>
+#include "readcsv.h"
 
 int main() {
+    readcsv read("try.csv");
+    for(int i=0; i<read.allcomplex.size(); i++){
+        cout << read.allcomplex[i].re << endl;
+        cout << read.allcomplex[i].im << endl;
+    }
     vector<complex> list;
     list.push_back( complex( 1.0, 0.0 ) );
     list.push_back( complex( 2.0, 0.0 ) );
