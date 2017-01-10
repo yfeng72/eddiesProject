@@ -6,7 +6,7 @@
 #include "readcsv.h"
 
 int main() {
-    readcsv read("try.txt");
+    readcsv read("try.csv");
     for(int i=0; i<read.allcomplex.size(); i++){
         cout << read.allcomplex[i].re << endl;
         cout << read.allcomplex[i].im << endl;

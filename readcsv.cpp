@@ -10,8 +10,8 @@ readcsv::readcsv(string csvname) {
     int i=0;
     if(myfile.is_open()){
         complex *newcomplex=new complex;
-        while(getline(myfile, line){
-            while (getline(myfile,line,',')) {
+        while(getline(myfile, line)){
+            while(getline(myfile,line,',')){
                 //cout << line << endl;
                 if (i % 2 == 0) {
                     newcomplex->re = (int) line;
