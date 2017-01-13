@@ -6,7 +6,6 @@
 
 readcsv::readcsv( string csvname ) {
     string line;
-<<<<<<< HEAD
     ifstream myfile(csvname);
     stringstream iss; //the stringstream to parse the line for commas
     string value; //individual values
